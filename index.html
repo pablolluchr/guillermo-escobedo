@@ -55,8 +55,9 @@ h1 i{font-style:italic;font-weight:300}
 .hero-role{font-family:var(--mono);font-size:13px;letter-spacing:.55em;text-transform:uppercase;color:var(--hueso);padding-left:.55em}
 .hero-alma{margin-top:34px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;color:rgba(241,237,228,.82);text-transform:uppercase}
 .hero-alma b{color:var(--hueso);font-weight:400}
-.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:rgba(241,237,228,.75);text-transform:uppercase;animation:cue 2.6s ease-in-out infinite}
-@keyframes cue{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;letter-spacing:.32em;padding-left:.32em;color:var(--hueso);text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.8);animation:cue 2.4s ease-in-out infinite}
+.scroll-cue::after{content:"";width:1px;height:38px;background:linear-gradient(var(--hueso),rgba(241,237,228,0))}
+@keyframes cue{0%,100%{transform:translate(-50%,0);opacity:.85}50%{transform:translate(-50%,9px);opacity:1}}
 @media(prefers-reduced-motion:reduce){.scroll-cue{animation:none}}
 
 /* ---------- structure ---------- */
