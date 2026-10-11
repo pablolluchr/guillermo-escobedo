@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0908"/>
+      <stop offset="1" stop-color="#1c1510"/>
+    </linearGradient>
+    <linearGradient id="basement" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a0d0c"/>
+      <stop offset="1" stop-color="#140303"/>
+    </linearGradient>
+    <radialGradient id="cone" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#f3d9a0" stop-opacity=".55"/>
+      <stop offset=".6" stop-color="#e2b874" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#e2b874" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.75">
+      <stop offset=".55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".85"/>
+    </radialGradient>
+    <linearGradient id="leak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff5a3c" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ff5a3c" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="pleats" width="36" height="10" patternUnits="userSpaceOnUse">
+      <rect width="36" height="10" fill="#000" fill-opacity="0"/>
+      <rect x="0" width="10" height="10" fill="#000" fill-opacity=".28"/>
+      <rect x="22" width="5" height="10" fill="#ff6b5a" fill-opacity=".06"/>
+    </pattern>
+    <pattern id="chev" width="40" height="22" patternUnits="userSpaceOnUse">
+      <rect width="40" height="22" fill="#e9e2d2"/>
+      <path d="M0 22 L20 0 L40 22 L30 22 L20 11 L10 22 Z" fill="#0b0908"/>
+    </pattern>
+    <pattern id="paper" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="none"/>
+      <rect x="0" width="1" height="14" fill="#fff" fill-opacity=".025"/>
+    </pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .09 0"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+
+  <!-- fondo -->
+  <rect width="800" height="1200" fill="#0a0807"/>
+
+  <!-- casa: planta de arriba -->
+  <rect x="60" y="170" width="680" height="470" fill="url(#wall)"/>
+  <rect x="60" y="170" width="680" height="470" fill="url(#paper)"/>
+  <!-- marco de cuadro torcido -->
+  <g transform="rotate(-4 220 300)">
+    <rect x="170" y="250" width="100" height="78" fill="none" stroke="#3a2e24" stroke-width="5"/>
+    <rect x="180" y="260" width="80" height="58" fill="#120e0b"/>
+  </g>
+  <!-- cono de luz de la lámpara -->
+  <polygon points="555,352 645,352 760,640 440,640" fill="url(#cone)"/>
+  <!-- lámpara -->
+  <polygon points="568,300 632,300 650,354 550,354" fill="#d9b779"/>
+  <polygon points="568,300 632,300 650,354 550,354" fill="#000" fill-opacity=".25"/>
+  <rect x="598" y="354" width="4" height="282" fill="#0d0a08"/>
+  <ellipse cx="600" cy="638" rx="26" ry="5" fill="#0d0a08"/>
+  <!-- sillón y señora, de espaldas, escuchando hacia abajo -->
+  <path d="M330 640 L330 520 Q330 488 362 488 L480 488 Q512 488 512 520 L512 640 Z" fill="#0d0a08"/>
+  <rect x="310" y="548" width="34" height="92" rx="10" fill="#0d0a08"/>
+  <rect x="498" y="548" width="34" height="92" rx="10" fill="#0d0a08"/>
+  <!-- cuerpo inclinado -->
+  <path d="M392 560 Q398 470 432 452 Q470 440 482 470 Q490 500 470 560 Z" fill="#070505"/>
+  <!-- cabeza ladeada hacia el suelo -->
+  <g transform="rotate(24 446 430)">
+    <ellipse cx="446" cy="430" rx="27" ry="31" fill="#070505"/>
+    <circle cx="452" cy="394" r="14" fill="#070505"/>
+  </g>
+  <!-- borde de luz en la silueta -->
+  <path d="M478 470 Q490 500 470 560" fill="none" stroke="#e8c98a" stroke-opacity=".35" stroke-width="2"/>
+
+  <!-- suelo de cheurones -->
+  <rect x="60" y="640" width="680" height="22" fill="url(#chev)"/>
+  <rect x="60" y="640" width="680" height="22" fill="#000" fill-opacity=".35"/>
+  <!-- rendija de la trampilla con luz roja -->
+  <rect x="226" y="640" width="96" height="22" fill="#0a0807"/>
+  <rect x="226" y="650" width="96" height="3" fill="#ff5a3c" filter="url(#glow)"/>
+  <rect x="226" y="651" width="96" height="1.5" fill="#ffb199"/>
+
+  <!-- sótano -->
+  <rect x="60" y="662" width="680" height="268" fill="url(#basement)"/>
+  <rect x="60" y="662" width="680" height="268" fill="url(#pleats)"/>
+  <polygon points="232,662 316,662 360,930 190,930" fill="url(#leak)" fill-opacity=".22"/>
+  <!-- bombilla colgante apagada -->
+  <line x1="520" y1="662" x2="520" y2="712" stroke="#1a0606" stroke-width="2"/>
+  <circle cx="520" cy="720" r="9" fill="#1a0606"/>
+  <!-- alguien escondido, agachado -->
+  <path d="M232 930 Q228 850 262 822 Q286 804 316 818 Q350 836 352 930 Z" fill="#060202"/>
+  <ellipse cx="288" cy="800" rx="26" ry="29" fill="#060202"/>
+  <!-- ojos -->
+  <ellipse cx="279" cy="798" rx="3.2" ry="2" fill="#f4eee0"/>
+  <ellipse cx="297" cy="798" rx="3.2" ry="2" fill="#f4eee0"/>
+  <ellipse cx="279" cy="798" rx="5" ry="3.5" fill="#f4eee0" opacity=".25" filter="url(#soft)"/>
+  <ellipse cx="297" cy="798" rx="5" ry="3.5" fill="#f4eee0" opacity=".25" filter="url(#soft)"/>
+  <!-- escalera hacia la trampilla -->
+  <g stroke="#1f0606" stroke-width="5">
+    <line x1="330" y1="662" x2="372" y2="930"/>
+    <line x1="372" y1="662" x2="414" y2="930"/>
+    <line x1="335" y1="700" x2="378" y2="700"/>
+    <line x1="341" y1="740" x2="384" y2="740"/>
+    <line x1="347" y1="780" x2="390" y2="780"/>
+    <line x1="353" y1="820" x2="396" y2="820"/>
+    <line x1="360" y1="860" x2="402" y2="860"/>
+    <line x1="366" y1="900" x2="408" y2="900"/>
+  </g>
+
+  <!-- marco de la casa -->
+  <rect x="60" y="170" width="680" height="760" fill="none" stroke="#e9e2d2" stroke-opacity=".18" stroke-width="1.5"/>
+
+  <!-- textos -->
+  <text x="400" y="104" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="17" letter-spacing="7" fill="#e9e2d2" fill-opacity=".8">UN FALSO DOCUMENTAL</text>
+  <text x="400" y="134" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="13" letter-spacing="4" fill="#c4433a">«SE OYEN COSAS DEBAJO DE LA CASA»</text>
+
+  <text x="400" y="1018" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="70" fill="#f1ede4" letter-spacing="1">La señora</text>
+  <text x="400" y="1082" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="64" fill="#e0574a">del bajo</text>
+
+  <text x="400" y="1118" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="14" letter-spacing="3" fill="#e9e2d2" fill-opacity=".75">ESCRITO POR GUILLERMO ESCOBEDO</text>
+  <text x="400" y="1138" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="14" letter-spacing="3" fill="#e9e2d2" fill-opacity=".75">DIRIGIDO POR RODRIGO BAZZANO</text>
+
+  <!-- sello ECAM -->
+  <g transform="translate(366 1152)">
+    <rect width="68" height="30" fill="none" stroke="#e9e2d2" stroke-opacity=".75" stroke-width="1.5"/>
+    <text x="34" y="21" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" letter-spacing="1.5" fill="#e9e2d2" fill-opacity=".85">ECAM</text>
+  </g>
+
+  <!-- viñeta y grano -->
+  <rect width="800" height="1200" fill="url(#vig)"/>
+  <rect width="800" height="1200" filter="url(#grain)"/>
+</svg>
