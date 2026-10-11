@@ -1,0 +1,26 @@
+WEB DE GUILLERMO ESCOBEDO — CÓMO USARLA
+========================================
+
+ESTRUCTURA
+  index.html      → la web completa
+  img/            → todas las imágenes
+
+CARTELES DE LAS SERIES (lo único que falta)
+  Descarga los carteles oficiales (press kit de las cadenas o Google Imágenes)
+  y guárdalos en la carpeta img/ con estos nombres EXACTOS:
+
+    img/sdl.jpg       → Sueños de Libertad
+    img/mia.jpg       → Mía es la Venganza
+    img/mercado.jpg   → Mercado Central
+
+  Aparecerán solos al recargar. Mientras no existan, se muestra un cartel
+  tipográfico a juego con la web. Formato ideal: vertical 2:3 (ej. 800x1200).
+
+RETRATO DE GUILLE
+  La portada usa img/guille.jpg (recorte del rodaje de Noches Frías).
+  Para cambiarla, sustituye ese archivo por el retrato que quieras
+  (vertical, mínimo ~1200px de ancho) manteniendo el nombre.
+
+PUBLICAR
+  Sube la carpeta entera (index.html + img/) tal cual a Netlify, Vercel,
+  GitHub Pages o cualquier hosting. No necesita nada más.

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0A09">
+<title>Guillermo Escobedo — Guionista</title>
+<meta name="description" content="Guillermo Escobedo, guionista. Premio ALMA 2026 al mejor guion de serie diaria. Sueños de Libertad, Mía es la Venganza, Mercado Central.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#0B0A09;
+  --negro2:#111009;
+  --hueso:#F1EDE4;
+  --gris:#969084;
+  --tenue:#57534B;
+  --linea:rgba(241,237,228,.14);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --mono:'Courier Prime','Courier New',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:#0B0A09;color-scheme:dark}
+body{background:var(--negro);color:var(--hueso);font-family:var(--mono);font-size:15.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
+::selection{background:var(--hueso);color:var(--negro)}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1020px;margin:0 auto;padding:0 28px}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:linear-gradient(180deg,rgba(11,10,9,.85),rgba(11,10,9,0));transition:background .3s}
+nav.solid{background:rgba(11,10,9,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1180px}
+.brand{font-family:var(--serif);font-size:19px;letter-spacing:.02em;text-decoration:none;font-weight:500}
+.brand i{font-style:italic}
+nav ul{display:flex;gap:30px;list-style:none}
+nav ul a{font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--gris);letter-spacing:.14em;text-transform:uppercase;transition:color .25s}
+nav ul a:hover,nav ul a:focus-visible{color:var(--hueso)}
+@media(max-width:720px){nav ul{gap:16px}nav ul li.hide-m{display:none}}
+
+/* ---------- hero ---------- */
+header{position:relative;height:100svh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.55) 0%,rgba(11,10,9,.25) 40%,rgba(11,10,9,.45) 75%,var(--negro) 100%)}
+.hero-in{position:relative;z-index:2;padding:0 24px}
+.hero-slug{font-family:var(--mono);font-size:13px;letter-spacing:.22em;color:rgba(241,237,228,.75);text-transform:uppercase;min-height:1.6em}
+.hero-slug .cursor{display:inline-block;width:8px;height:1em;background:var(--hueso);vertical-align:baseline;margin-left:4px;animation:blink 1.1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(58px,10.5vw,132px);line-height:1.02;letter-spacing:.01em;margin:18px 0 20px}
+h1 i{font-style:italic;font-weight:300}
+.hero-role{font-family:var(--mono);font-size:13px;letter-spacing:.55em;text-transform:uppercase;color:var(--hueso);padding-left:.55em}
+.hero-alma{margin-top:34px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:rgba(241,237,228,.65);text-transform:uppercase}
+.hero-alma b{color:var(--hueso);font-weight:400}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:rgba(241,237,228,.5);text-transform:uppercase;animation:cue 2.6s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+@media(prefers-reduced-motion:reduce){.scroll-cue{animation:none}}
+
+/* ---------- structure ---------- */
+section{padding:110px 0 0}
+.slug{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--gris);text-transform:uppercase;margin-bottom:26px;display:flex;align-items:center;gap:16px}
+.slug::after{content:'';height:1px;background:var(--linea);flex:1}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5.2vw,58px);line-height:1.05;margin-bottom:18px}
+h2 i{font-style:italic;font-weight:300}
+.sec-note{color:var(--gris);max-width:600px;margin-bottom:48px}
+.sec-note a{color:var(--hueso)}
+.sec-note strong,.serie-info p strong{color:var(--hueso);font-weight:400}
+
+/* ---------- bio ---------- */
+.bio{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+@media(max-width:820px){.bio{grid-template-columns:1fr}}
+.bio-photo{position:relative;max-width:420px;justify-self:end}
+@media(max-width:820px){.bio-photo{justify-self:start}}
+.bio-photo img{width:100%;filter:contrast(1.02)}
+.bio-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--tenue);text-transform:uppercase;margin-top:12px}
+.datos{margin-top:38px;border-top:1px solid var(--linea)}
+.dato{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:13px 0;border-bottom:1px solid var(--linea);font-size:14px}
+.dato .k{color:var(--tenue);letter-spacing:.08em;text-transform:uppercase;font-size:11.5px;padding-top:2px}
+@media(max-width:520px){.dato{grid-template-columns:1fr;gap:2px}}
+
+/* ---------- series ---------- */
+.serie{display:grid;grid-template-columns:230px 1fr;gap:44px;padding:44px 0;border-top:1px solid var(--linea);align-items:center}
+.serie:last-child{border-bottom:1px solid var(--linea)}
+@media(max-width:720px){.serie{grid-template-columns:1fr;gap:24px}.poster{max-width:230px}}
+.poster{position:relative;aspect-ratio:2/3;background:var(--negro2);overflow:hidden}
+.poster img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.poster .fallback{position:absolute;inset:0;border:1px solid var(--linea);display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:22px 14px}
+.poster .fb-net{font-family:var(--mono);font-size:9px;letter-spacing:.22em;color:var(--tenue);text-transform:uppercase}
+.poster .fb-title{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.08}
+.poster .fb-title i{font-style:italic;font-weight:300}
+.poster .fb-year{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--tenue)}
+.serie-info h3{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.laurel{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--hueso);border:1px solid var(--linea);padding:5px 12px;white-space:nowrap;font-weight:400}
+.laurel.win{border-color:rgba(241,237,228,.45)}
+.credit{font-family:var(--mono);font-size:12.5px;color:var(--tenue);margin:12px 0 14px;letter-spacing:.02em}
+.serie-info p{color:var(--gris);font-size:14.5px;max-width:560px}
+.arc{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--tenue)}
+.arc i{font-style:normal;color:var(--gris);margin:0 8px}
+
+/* ---------- cortos ---------- */
+.corto-feat{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:center;margin-bottom:64px}
+@media(max-width:820px){.corto-feat{grid-template-columns:1fr;gap:28px}}
+.corto-feat h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.05}
+.corto-feat h3 i{font-style:italic;font-weight:300}
+.corto-feat p{color:var(--gris);font-size:14.5px;margin-bottom:20px}
+.corto-gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.corto-gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.corto-gal img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+a.ext{color:var(--hueso);text-decoration:none;font-size:12.5px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--gris);padding-bottom:3px;transition:border-color .25s}
+a.ext:hover{border-color:var(--hueso)}
+.corto-list{border-top:1px solid var(--linea)}
+.corto{display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:20px;padding:17px 4px;border-bottom:1px solid var(--linea);transition:background .2s}
+.corto:hover{background:var(--negro2)}
+.corto .n{font-family:var(--mono);font-size:11px;color:var(--tenue)}
+.corto h4{font-family:var(--serif);font-weight:400;font-size:21px}
+.corto small{font-family:var(--mono);font-size:11px;color:var(--tenue);text-align:right;letter-spacing:.04em}
+@media(max-width:600px){.corto{grid-template-columns:1fr}.corto small{text-align:left}.corto .n{display:none}}
+
+/* ---------- además ---------- */
+.extra{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:46px}
+@media(max-width:820px){.extra{grid-template-columns:1fr;gap:30px}}
+.xcard{border-top:1px solid var(--linea);padding-top:20px}
+.xcard h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:6px}
+.xcard .mini{width:120px;margin-bottom:16px}
+.xcard .credit{margin:4px 0 10px}
+.xcard p{color:var(--gris);font-size:13.5px}
+.invertida .xcard{border-top-color:rgba(11,10,9,.22)}
+.invertida .xcard h3{color:var(--negro)}
+.invertida .xcard .credit{color:rgba(11,10,9,.55)}
+.invertida .xcard p{color:rgba(11,10,9,.7)}
+
+/* ---------- prensa ---------- */
+.van{display:block;text-align:center;padding:64px 24px;border:1px solid var(--linea);margin:46px 0 40px;text-decoration:none;transition:background .25s}
+.van:hover{background:var(--negro2)}
+.van .num{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(90px,13vw,150px);line-height:.9}
+.van .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin:10px 0 26px}
+.van h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,32px);line-height:1.2;max-width:640px;margin:0 auto 14px}
+.van p{color:var(--gris);font-size:14px;max-width:520px;margin:0 auto}
+.van .src{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--tenue);text-transform:uppercase;margin-top:24px}
+.van:hover .src{color:var(--hueso)}
+.press{border-top:1px solid var(--linea)}
+.press a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:19px 4px;border-bottom:1px solid var(--linea);text-decoration:none;transition:background .2s}
+.press a:hover{background:var(--negro2)}
+.press .pt{font-family:var(--serif);font-size:21px;font-weight:400}
+.press .pd{font-family:var(--mono);font-size:12.5px;color:var(--tenue);display:block;margin-top:4px}
+.press .ps{font-family:var(--mono);font-size:11px;color:var(--tenue);letter-spacing:.14em;text-transform:uppercase;flex:none}
+.press a:hover .pt{font-style:italic}
+
+/* ---------- banda invertida ---------- */
+.invertida{background:var(--hueso);color:var(--negro);padding:96px 0 100px;margin-top:110px}
+.invertida .slug{color:rgba(11,10,9,.55)}
+.invertida .slug::after{background:rgba(11,10,9,.18)}
+.invertida .sec-note{color:rgba(11,10,9,.66)}
+.invertida .sec-note strong{color:var(--negro)}
+
+/* ---------- premios ---------- */
+.awards{border-top:1px solid rgba(11,10,9,.22);margin-top:46px}
+.award{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:20px 4px;border-bottom:1px solid rgba(11,10,9,.22)}
+.award b{font-family:var(--serif);font-weight:500;font-size:23px;display:block;color:var(--negro)}
+.award .det{font-family:var(--mono);font-size:12.5px;color:rgba(11,10,9,.62)}
+.award .res{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(11,10,9,.5)}
+.award .res.win{color:var(--negro);border:1px solid var(--negro);padding:5px 12px}
+@media(max-width:600px){.award{grid-template-columns:1fr;gap:8px}.award .res{justify-self:start}}
+
+/* ---------- contacto ---------- */
+.contact{text-align:center;margin-top:0;padding:100px 24px 0}
+.contact .fin{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--tenue);text-transform:uppercase;margin-bottom:26px}
+.contact h2{font-size:clamp(44px,7vw,76px)}
+.contact p{color:var(--gris);max-width:440px;margin:10px auto 40px}
+.cta{display:inline-block;font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--negro);background:var(--hueso);padding:16px 36px;text-decoration:none;transition:opacity .2s}
+.cta:hover{opacity:.85}
+.links{margin-top:28px;display:flex;gap:34px;justify-content:center}
+.links a{font-family:var(--mono);font-size:12px;color:var(--gris);text-decoration:none;letter-spacing:.16em;text-transform:uppercase;transition:color .2s}
+.links a:hover{color:var(--hueso)}
+
+footer{margin-top:90px;border-top:1px solid var(--linea);padding:26px 0 42px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--tenue);letter-spacing:.14em;text-transform:uppercase}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero-slug .cursor{animation:none}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:1px solid var(--hueso);outline-offset:4px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Guillermo <i>Escobedo</i></a>
+    <ul>
+      <li><a href="#series">Series</a></li>
+      <li><a href="#cine">Cortos</a></li>
+      <li class="hide-m"><a href="#prensa">Prensa</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="Guillermo Escobedo dirigiendo a los actores en el rodaje de Noches Frías"></div>
+  <div class="hero-in">
+    <div class="hero-slug"><span id="typed"></span><span class="cursor" aria-hidden="true"></span></div>
+    <h1>Guillermo <i>Escobedo</i></h1>
+    <div class="hero-role">Guionista</div>
+    <div class="hero-alma"><b>Premio ALMA 2026</b> · Mejor guion de serie diaria</div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Desliza</div>
+</header>
+
+<section id="sobre">
+  <div class="wrap rv">
+    <div class="slug">INT. BIOGRAFÍA — DÍA</div>
+    <div class="bio">
+      <div>
+        <h2>El guion como <i>oficio diario</i></h2>
+        <p class="sec-note">Diplomado en Guion Cinematográfico por la <a href="https://ecam.es" target="_blank" rel="noopener">ECAM</a>, Guillermo ha construido su carrera en el formato más exigente de la televisión: la serie diaria, donde el guion se escribe, se reescribe y se rueda a contrarreloj. Esa disciplina convive con una mirada de autor que desarrolla en cine y en proyectos propios.</p>
+        <div class="datos">
+          <div class="dato"><span class="k">Oficio</span><span>Guionista — ficción diaria y cine</span></div>
+          <div class="dato"><span class="k">Actualmente</span><span>Guionista de plató en <strong>Sueños de Libertad</strong>, desde el cap. 1</span></div>
+          <div class="dato"><span class="k">Formación</span><span>ECAM · Diplomatura en Guion · 2016–2019</span></div>
+          <div class="dato"><span class="k">Base</span><span>Madrid</span></div>
+        </div>
+      </div>
+      <div class="bio-photo">
+        <img src="img/guille.jpg" alt="Guillermo Escobedo, guionista, durante un rodaje">
+        <div class="bio-cap">A pie de plató</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="series">
+  <div class="wrap rv">
+    <div class="slug">INT. PLATÓ — SERIES DIARIAS</div>
+    <h2>Guionista <i>de plató</i></h2>
+    <p class="sec-note">Una figura clave y poco visible: el guionista que trabaja a pie de set, resolviendo en horas lo que el rodaje necesita para no detenerse. Creatividad a contrarreloj, todos los días.</p>
+
+    <div class="serie">
+      <div class="poster">
+        <img class="real" src="img/sdl.jpg" alt="Cartel de Sueños de Libertad" onerror="this.remove()">
+        <div class="fallback">
+          <div class="fb-net">Atresmedia · Diagonal TV</div>
+          <div class="fb-title">Sueños de<br><i>Libertad</i></div>
+          <div class="fb-year">2023 — Actualidad</div>
+        </div>
+      </div>
+      <div class="serie-info">
+        <h3>Sueños de Libertad <span class="laurel win">Premio ALMA 2026</span></h3>
+        <div class="credit">T1–T4 · Guionista de plató · Diagonal TV y Atresmedia · Dir. Joan Noguera · 2023 — actualidad</div>
+        <p>Guionista de plató desde el capítulo 1 de la serie líder de la sobremesa. Cuatro temporadas — y las que vienen. Por la T2, <strong>ganador del Premio ALMA al mejor guion de serie diaria</strong>.</p>
+      </div>
+    </div>
+
+    <div class="serie">
+      <div class="poster">
+        <img class="real" src="img/mia.jpg" alt="Cartel de Mía es la Venganza" onerror="this.remove()">
+        <div class="fallback">
+          <div class="fb-net">Mediaset · Alea Media</div>
+          <div class="fb-title">Mía es la<br><i>Venganza</i></div>
+          <div class="fb-year">2022 — 2023</div>
+        </div>
+      </div>
+      <div class="serie-info">
+        <h3>Mía es la Venganza</h3>
+        <div class="credit">T1–T2 · Guionista de plató · Creada por Aurora Guerra · Alea Media y Mediaset España · 2022–2023</div>
+        <p>Guionista de plató durante las dos temporadas de la serie, desde su estreno hasta su capítulo final (caps. 1–110).</p>
+      </div>
+    </div>
+
+    <div class="serie">
+      <div class="poster">
+        <img class="real" src="img/mercado.jpg" alt="Cartel de Mercado Central" onerror="this.remove()">
+        <div class="fallback">
+          <div class="fb-net">TVE · Diagonal TV</div>
+          <div class="fb-title">Mercado<br><i>Central</i></div>
+          <div class="fb-year">2019 — 2021</div>
+        </div>
+      </div>
+      <div class="serie-info">
+        <h3>Mercado Central <span class="laurel">Nominado ALMA 2021</span></h3>
+        <div class="credit">T1–T2 · Diagonal TV y TVE · Dir. Joan Noguera · 2019–2021</div>
+        <p>La serie donde se hizo el oficio, recorriendo el escalafón completo del equipo de guion — hasta la <strong>nominación al ALMA 2021</strong> por la T2.</p>
+        <div class="arc">Becario de guion <i>→</i> Auxiliar <i>→</i> Guionista de plató</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cine">
+  <div class="wrap rv">
+    <div class="slug">EXT. CORTOMETRAJES — NOCHE</div>
+    <h2>Escritura con <i>firma propia</i></h2>
+    <p class="sec-note">Ocho cortometrajes como guionista — dos de ellos, además, dirigidos por él.</p>
+
+    <div class="corto-feat">
+      <div>
+        <h3>Noches <i>Frías</i></h3>
+        <div class="credit">Guion y dirección · Jarana Films y El Paco te produce · 2026</div>
+        <p>Su proyecto más personal hasta la fecha, protagonizado por <strong style="color:var(--hueso);font-weight:400">Mina El Hammani</strong> e <strong style="color:var(--hueso);font-weight:400">Ibrahim Al Shami</strong>. El guion, coescrito con Carlos Suárez, fue finalista de la convocatoria DAMA Cortos.</p>
+        <a class="ext" href="https://byjarana.com/finaliza-el-rodaje-de-noches-frias-protagonizado-por-mina-el-hammani-y-ibrahim-al-shami/" target="_blank" rel="noopener">Leer sobre el rodaje</a>
+      </div>
+      <div class="corto-gal">
+        <img src="img/set.jpg" alt="Rodaje de Noches Frías">
+        <img src="img/mesa.jpg" alt="Equipo de Noches Frías revisando una escena">
+        <img src="img/claqueta.jpg" alt="Claqueta del rodaje de Noches Frías">
+      </div>
+    </div>
+
+    <div class="corto-list">
+      <div class="corto"><span class="n">02</span><h4>Treinta Segundos</h4><small>Ópera prima de Mina El Hammani · 2021</small></div>
+      <div class="corto"><span class="n">03</span><h4>Un Mal Menor</h4><small>Mejor guion · Chainsaw Festival 2020</small></div>
+      <div class="corto"><span class="n">04</span><h4>Cuento Chino</h4><small>Dir. Rodrigo Bazzano · 2019</small></div>
+      <div class="corto"><span class="n">05</span><h4>Peláez</h4><small>Dir. José Angorrilla · 2018</small></div>
+      <div class="corto"><span class="n">06</span><h4>Cuando los papás se quieren mucho</h4><small>Dir. Rodrigo Bazzano · 2018</small></div>
+      <div class="corto"><span class="n">07</span><h4>La señora del bajo</h4><small>Dir. Rodrigo Bazzano · 2018</small></div>
+      <div class="corto"><span class="n">08</span><h4>Old Ladies Attack</h4><small>Guion y dirección · 2015</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="mas" class="invertida">
+  <div class="wrap rv">
+    <div class="slug">INT. OTRAS SALAS — CONTINUO</div>
+    <h2>Más allá <i>del plató</i></h2>
+    <div class="extra">
+      <div class="xcard">
+        <img class="mini" src="img/pacientes.jpg" alt="Cartel de Los Pacientes del Doctor García" onerror="this.remove()">
+        <h3>Documentalista</h3>
+        <div class="credit">Los Pacientes del Doctor García · Diagonal TV y TVE · 2021–2022</div>
+        <p>Documentación de la serie de 10 capítulos dirigida por Joan Noguera, adaptación de la novela de Almudena Grandes.</p>
+      </div>
+      <div class="xcard">
+        <h3>Desarrollo</h3>
+        <div class="credit">Federation Spain · 2021</div>
+        <p>Desarrollo de proyectos de ficción en la filial española del grupo internacional Federation Studios.</p>
+      </div>
+      <div class="xcard">
+        <h3>Dirección y producción</h3>
+        <div class="credit">2017–2019</div>
+        <p>Ayudante de dirección y auxiliar de producción en largometraje, spots y videoclips, con formación en Ayudantía de Dirección por la ECAM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prensa" style="padding-top:100px">
+  <div class="wrap rv">
+    <div class="slug">INT. PRENSA — HABLAN DE ÉL</div>
+    <h2>En los <i>medios</i></h2>
+
+    <a class="van" href="https://www.vanitatis.elconfidencial.com/estilo/ocio/2023-11-06/los-25-que-mueven-el-audiovisual-en-espana_3751852/" target="_blank" rel="noopener">
+      <div class="num">25</div>
+      <div class="lbl">menores de 35</div>
+      <h3>Uno de los veinticinco profesionales que mueven el audiovisual en España</h3>
+      <p>En 2023, Vanitatis (El Confidencial) lo incluyó en su selección de los profesionales menores de 35 años más influyentes del sector audiovisual español.</p>
+      <div class="src">Vanitatis · El Confidencial · 2023</div>
+    </a>
+
+    <div class="press">
+      <a href="https://rubik-audiovisual.com/la-labor-del-guionista-de-plato-creatividad-a-contrarreloj/" target="_blank" rel="noopener">
+        <span><span class="pt">La labor del guionista de plató: creatividad a contrarreloj</span><span class="pd">Un reportaje sobre el puesto que define su día a día — tan necesario como desconocido.</span></span><span class="ps">Rubik</span>
+      </a>
+      <a href="https://tivu.es/news/guionistas-de-emergencia/" target="_blank" rel="noopener">
+        <span><span class="pt">Guionistas de emergencia</span><span class="pd">La escritura de urgencia en las series diarias, contada desde dentro.</span></span><span class="ps">Tivú</span>
+      </a>
+      <a href="https://fueradeseries.com/ellos-tambien-crean-asi-se-abren-paso-los-jovenes-guionistas-en-espana/" target="_blank" rel="noopener">
+        <span><span class="pt">Así se abren paso los jóvenes guionistas en España</span><span class="pd">Sobre la nueva generación de guionistas de la ficción española.</span></span><span class="ps">Fuera de Series</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="premios" class="invertida" style="padding-top:96px">
+  <div class="wrap rv">
+    <div class="slug">INT. RECONOCIMIENTOS — GALA</div>
+    <h2>Reconocimientos</h2>
+    <div class="awards">
+      <div class="award"><span><b>Premios ALMA 2026</b><span class="det">Mejor guion de serie diaria · Sueños de Libertad T2</span></span><span class="res win">Ganador</span></div>
+      <div class="award"><span><b>Premios ALMA 2021</b><span class="det">Mejor guion de serie diaria · Mercado Central T2</span></span><span class="res">Nominado</span></div>
+      <div class="award"><span><b>Chainsaw Festival (California) 2020</b><span class="det">Mejor guion original · Un Mal Menor</span></span><span class="res win">Ganador</span></div>
+      <div class="award"><span><b>DAMA Cortos</b><span class="det">Noches Frías, coescrito con Carlos Suárez</span></span><span class="res">Finalista</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact rv" id="contacto">
+  <div class="fin">Fundido a negro</div>
+  <h2>¿<i>Escribimos</i>?</h2>
+  <p>Disponible para proyectos de ficción televisiva, desarrollo y cine.</p>
+  <a class="cta" href="mailto:g.escobedopalma@gmail.com">g.escobedopalma@gmail.com</a>
+  <div class="links">
+    <a href="https://www.imdb.com/es-es/name/nm10994078/" target="_blank" rel="noopener">IMDb</a>
+    <a href="https://www.linkedin.com/in/guillermo-escobedo-413203168/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Guillermo Escobedo</span>
+    <span>Guionista · Madrid</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t = "INT. PLATÓ — DÍA";
+  var el = document.getElementById('typed');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = t; return; }
+  var i = 0;
+  (function tick(){ if(i <= t.length){ el.textContent = t.slice(0,i); i++; setTimeout(tick, 70); } })();
+})();
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('solid', window.scrollY > window.innerHeight * .7);
+  }, {passive:true});
+})();
+(function(){
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  },{threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body>
+</html>
