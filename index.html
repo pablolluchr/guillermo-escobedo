@@ -110,6 +110,13 @@ h2 i{font-style:italic;font-weight:300}
 .corto-gal img:first-child{grid-column:1/-1;aspect-ratio:16/9}
 a.ext{color:var(--hueso);text-decoration:none;font-size:12.5px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--gris);padding-bottom:3px;transition:border-color .25s}
 a.ext:hover{border-color:var(--hueso)}
+.carteles{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:40px}
+@media(max-width:820px){.carteles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.carteles{grid-template-columns:1fr 1fr;gap:12px}}
+.carteles figure{margin:0}
+.carteles img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:var(--negro2);transition:transform .35s ease}
+.carteles figure:hover img{transform:translateY(-4px)}
+.carteles figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--gris);margin-top:10px;text-transform:uppercase}
 .corto-list{border-top:1px solid var(--linea)}
 .corto{display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:20px;padding:17px 4px;border-bottom:1px solid var(--linea);transition:background .2s}
 .corto:hover{background:var(--negro2)}
@@ -124,6 +131,8 @@ a.ext:hover{border-color:var(--hueso)}
 .xcard{border-top:1px solid var(--linea);padding-top:20px}
 .xcard h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:6px}
 .xcard .mini{width:120px;margin-bottom:16px}
+.xcard .xphoto{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:70% 40%;margin-bottom:18px;display:block}
+.xcard .mini.logo{width:200px;aspect-ratio:3.4/1;object-fit:cover;object-position:50% 46%}
 .xcard .credit{margin:4px 0 10px}
 .xcard p{color:var(--gris);font-size:13.5px}
 .invertida .xcard{border-top-color:rgba(11,10,9,.22)}
@@ -132,21 +141,14 @@ a.ext:hover{border-color:var(--hueso)}
 .invertida .xcard p{color:rgba(11,10,9,.7)}
 
 /* ---------- prensa ---------- */
-.van{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:48px;align-items:center;padding:44px;border:1px solid var(--linea);margin:46px 0 40px}
-@media(max-width:820px){.van{grid-template-columns:1fr;gap:28px;padding:28px 24px}}
-.van-cover{display:block;color:var(--hueso);padding:8px 40px 8px 0;border-right:1px solid var(--linea);text-decoration:none}
-@media(max-width:820px){.van-cover{border-right:0;border-bottom:1px solid var(--linea);padding:0 0 28px}}
-.van-cover .vrow{display:flex;align-items:baseline;gap:18px;margin-bottom:30px}
-.van-cover .v25{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(120px,14vw,170px);line-height:.75;letter-spacing:-.02em;transition:transform .5s ease}
-.van-cover:hover .v25{transform:translateX(6px)}
-.van-cover .vlos{font-family:var(--mono);font-size:12px;letter-spacing:.4em;color:var(--gris);text-transform:uppercase}
-.van-cover .vh{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.4vw,36px);line-height:1}
-.van-cover .vs{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--gris);margin-top:16px;text-transform:uppercase}
-.van-txt .src{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--gris);text-transform:uppercase;margin-bottom:18px}
-.van-txt h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,34px);line-height:1.15;margin-bottom:16px}
-.van-txt p{color:var(--gris);font-size:14.5px;margin-bottom:28px;max-width:520px}
-.van-btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--negro);background:var(--hueso);padding:14px 26px;text-decoration:none;transition:opacity .2s}
-.van-btn:hover{opacity:.85}
+.van{display:block;text-align:center;padding:64px 24px;border:1px solid var(--linea);margin:46px 0 40px;text-decoration:none;transition:background .25s}
+.van:hover{background:var(--negro2)}
+.van .num{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(90px,13vw,150px);line-height:.9}
+.van .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin:10px 0 26px}
+.van h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,32px);line-height:1.2;max-width:640px;margin:0 auto 14px}
+.van p{color:var(--gris);font-size:14px;max-width:520px;margin:0 auto}
+.van .src{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--tenue);text-transform:uppercase;margin-top:24px}
+.van:hover .src{color:var(--hueso)}
 .press{border-top:1px solid var(--linea)}
 .press a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:19px 4px;border-bottom:1px solid var(--linea);text-decoration:none;transition:background .2s}
 .press a:hover{background:var(--negro2)}
@@ -320,6 +322,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
       </div>
     </div>
 
+    <div class="carteles">
+      <figure><img src="img/treinta-segundos.jpg" alt="Cartel de Treinta Segundos" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Treinta Segundos</figcaption></figure>
+      <figure><img src="img/un-mal-menor.jpg" style="object-position:85% 50%" alt="Cartel de Un Mal Menor" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Un Mal Menor</figcaption></figure>
+      <figure><img src="img/cuento-chino.jpg" alt="Cartel de Cuento Chino" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Cuento Chino</figcaption></figure>
+      <figure><img src="img/cuando-los-papas.jpg" alt="Cartel de Cuando los papás se quieren mucho" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Cuando los papás se quieren mucho</figcaption></figure>
+      <figure><img src="img/pelaez.jpg" alt="Cartel de Peláez" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Peláez</figcaption></figure>
+    </div>
+
     <div class="corto-list">
       <div class="corto"><span class="n">02</span><h4>Treinta Segundos</h4><small>Ópera prima de Mina El Hammani · 2021</small></div>
       <div class="corto"><span class="n">03</span><h4>Un Mal Menor</h4><small>Mejor guion · Chainsaw Festival 2020</small></div>
@@ -338,17 +348,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
     <h2>Más allá <i>del guion</i></h2>
     <div class="extra">
       <div class="xcard">
-        <img class="mini" src="img/pacientes.jpg" alt="Cartel de Los Pacientes del Doctor García" onerror="this.remove()">
+        <img class="xphoto" src="img/documentalista.jpg" alt="Guillermo Escobedo en rodaje" onerror="this.onerror=null;this.className='mini';this.src='img/pacientes.jpg'">
         <h3>Documentalista</h3>
         <div class="credit">Los Pacientes del Doctor García · Diagonal TV y TVE · 2021–2022</div>
         <p>Documentación de la serie de 10 capítulos dirigida por Joan Noguera, adaptación de la novela de Almudena Grandes.</p>
       </div>
       <div class="xcard">
+        <img class="mini logo" src="img/federation.png" alt="Logo de Federation Spain" onerror="this.remove()">
         <h3>Desarrollo</h3>
         <div class="credit">Federation Spain · 2021</div>
         <p>Desarrollo de proyectos de ficción en la filial española del grupo internacional Federation Studios.</p>
       </div>
       <div class="xcard">
+        <img class="mini" src="img/lope.jpg" alt="Cartel de Lope enamorado" onerror="this.remove()">
         <h3>Dirección y producción</h3>
         <div class="credit">2017–2019</div>
         <p>Ayudante de dirección y auxiliar de producción en largometraje, spots y videoclips, con formación en Ayudantía de Dirección por la ECAM.</p>
@@ -362,21 +374,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
     <div class="slug">INT. PRENSA — HABLAN DE ÉL</div>
     <h2>En los <i>medios</i></h2>
 
-    <div class="van">
-      <a class="van-cover" href="https://www.vanitatis.elconfidencial.com/estilo/ocio/2023-11-06/los-25-que-mueven-el-audiovisual-en-espana_3751852/" target="_blank" rel="noopener" aria-label="Leer el artículo de Vanitatis: los 25 profesionales del audiovisual menores de 35">
-        <div class="vb" aria-hidden="true">
-          <div class="vrow"><span class="vlos">Los</span><span class="v25">25</span></div>
-          <div class="vh">profesionales<br>del audiovisual<br>menores de 35</div>
-          <div class="vs">QUE MUEVEN LA INDUSTRIA EN ESPAÑA</div>
-        </div>
-      </a>
-      <div class="van-txt">
-        <div class="src">Vanitatis · El Confidencial · 2023</div>
-        <h3>Elegido entre los jóvenes que <i>mueven</i> el audiovisual español</h3>
-        <p>Vanitatis (El Confidencial) lo incluyó en su selección de los profesionales menores de 35 años más influyentes del sector audiovisual español.</p>
-        <a class="van-btn" href="https://www.vanitatis.elconfidencial.com/estilo/ocio/2023-11-06/los-25-que-mueven-el-audiovisual-en-espana_3751852/" target="_blank" rel="noopener">Leer artículo completo →</a>
-      </div>
-    </div>
+    <a class="van" href="https://www.vanitatis.elconfidencial.com/estilo/ocio/2023-11-06/los-25-que-mueven-el-audiovisual-en-espana_3751852/" target="_blank" rel="noopener">
+      <div class="num">25</div>
+      <div class="lbl">menores de 35</div>
+      <h3>Uno de los veinticinco profesionales que mueven el audiovisual en España</h3>
+      <p>En 2023, Vanitatis (El Confidencial) lo incluyó en su selección de los profesionales menores de 35 años más influyentes del sector audiovisual español.</p>
+      <div class="src">Vanitatis · El Confidencial · 2023</div>
+    </a>
 
     <div class="press">
       <a href="https://rubik-audiovisual.com/la-labor-del-guionista-de-plato-creatividad-a-contrarreloj/" target="_blank" rel="noopener">
